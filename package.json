@@ -1,0 +1,20 @@
+{
+  "name": "design-patterns-exploration",
+  "version": "1.0.0",
+  "description": "## Running list of patterns that I am researching/have researched - Singleton",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/therealmbittarelli/design-patterns-exploration.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/therealmbittarelli/design-patterns-exploration/issues"
+  },
+  "homepage": "https://github.com/therealmbittarelli/design-patterns-exploration#readme"
+}
