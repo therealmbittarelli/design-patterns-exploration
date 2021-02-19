@@ -21,8 +21,8 @@
 
 // Usually, the goal is to manage global application state. Some examples I’ve seen or written myself include using a singleton as the source of config settings for a web app, on the client side for anything initiated with an API key (you usually don’t want to risk sending multiple analytics tracking calls, for example), and to store data in memory in a client-side web application (e.g. stores in Flux).
 
-class SingletonClass {
-    private static instance: SingletonClass;
+class SingletonClassTS {
+    private static instance: SingletonClassTS;
 
     /**
      * The SingletonClass's constructor should always be private to prevent direct
@@ -36,12 +36,12 @@ class SingletonClass {
      * This implementation let you subclass the Singleton class while keeping
      * just one instance of each subclass around.
      */
-    public static getInstance(): SingletonClass {
-        if (!SingletonClass.instance) {
-            SingletonClass.instance = new SingletonClass();
+    public static getInstance(): SingletonClassTS {
+        if (!SingletonClassTS.instance) {
+            SingletonClassTS.instance = new SingletonClassTS();
         }
 
-        return SingletonClass.instance;
+        return SingletonClassTS.instance;
     }
 
     /**
@@ -57,15 +57,15 @@ class SingletonClass {
  * The client code.
  */
 function clientCode() {
-    const s1 = SingletonClass.getInstance();
-    const s2 = SingletonClass.getInstance();
+    const s1 = SingletonClassTS.getInstance();
+    const s2 = SingletonClassTS.getInstance();
 
     s1.someMethod();
 
     if (s1 === s2) {
-        console.log('SingletonClass works, both variables contain the same instance.');
+        console.log('SingletonClassTS works, both variables contain the same instance.');
     } else {
-        console.log('SingletonClass failed, variables contain different instances.');
+        console.log('SingletonClassTS failed, variables contain different instances.');
     }
 }
 
