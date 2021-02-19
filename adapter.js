@@ -1,14 +1,15 @@
-//
+
 class TargetClass {
     printTargetExample = () => {
-        return 'Goodnight, Neverland!';
+        return 'I PRINT THINGS IN ALL CAPS.';
     }
 }
 
-// The adaptee class prints outdated/incorrect information
+// The adaptee class prints a false phrase about my favorite animal
 class AdapteeClass {
-    printMaggiesFavoriteAnimal = () => {
-        return 'Dolphins are my favorite!'
+    
+    printAdapteeExample = () => {
+        return 'Otters are my favorite!'
     }
 }
 
@@ -18,18 +19,10 @@ class AdapterClass {
     }
 
     adapterTranslationAction = () => {
-        // Split string into array and remove the first word
-        let adapteePhraseToArray = this.adapteeClass.printMaggiesFavoriteAnimal().split(' ');
-        adapteePhraseToArray.splice(0, 1);
+        // Set incoming string to all upper case
+        let adapteePhraseToUpper = this.adapteeClass.printAdapteeExample().toUpperCase();
 
-        // Set the item to replace the removed word with
-        let favoriteAnimal = 'Otters '
-
-        // Update the initial phrase with the TRUE favorite animal
-        let newPhrase = favoriteAnimal.concat(adapteePhraseToArray.join());
-        newPhrase = newPhrase.replace(/,/g, ' ');
-        
-        return `Checkout the Adapter in action! Adaptee has been translated/updated: ${newPhrase}`;
+        return `Checkout the Adapter in action! Adaptee has been translated/updated: ${adapteePhraseToUpper}`;
     }
 }
 
@@ -37,7 +30,7 @@ let targetClassInstance = new TargetClass();
 console.log('Target:', targetClassInstance.printTargetExample());
 
 let adapteeClassInstance = new AdapteeClass();
-console.log('Adaptee:', adapteeClassInstance.printMaggiesFavoriteAnimal());
+console.log('Adaptee:', adapteeClassInstance.printAdapteeExample());
 
 let adapterClassInstance = new AdapterClass(adapteeClassInstance);
 console.log('Adapter:', adapterClassInstance.adapterTranslationAction());
