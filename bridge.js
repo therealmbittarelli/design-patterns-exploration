@@ -1,32 +1,40 @@
+// Establish various shapes of blocks, and various colors that they can be painted
+
+// Abstraction - define 'Block' base class to be extended to various types of Blocks
+// Define method that paints a block
 class Block {
     constructor(colorToPaint) {
         this.colorToPaint = colorToPaint;
     }
 
     paintBlock = () => {
-        let result = this.colorToPaint.paintIt();
-        return `Block base class result is:\n${result}`;
+        let paintPlan = this.colorToPaint.paintIt();
+        return `Block base class paint plan is:\n${paintPlan}`;
     }
 }
 
+// Extend base class 'Block' as different block shapes
 class SquareBlock extends Block {
     paintBlock = () => {
-        let result = this.colorToPaint.paintIt();
-        return `Square block class result is:\n${result}`;
+        let paintPlan = this.colorToPaint.paintIt();
+        return `Square block class paint plan is:\n${paintPlan}`;
     }
 }
 
 class OctagonalBlock extends Block {
     paintBlock = () => {
-        let result = this.colorToPaint.paintIt();
-        return `Octagonal block class result is:\n${result}`;
+        let paintPlan = this.colorToPaint.paintIt();
+        return `Octagonal block class paint plan is:\n${paintPlan}`;
     }
 }
 
+// Implementation - defines/pre-implements but doesn't implement a paintIt() function
+// Like an interface in the above way
 class ColorToPaint {
     paintIt = () => {}
 }
 
+// Extend base class 'ColorToPaint' by implementing the paintIt() method in various colors
 class Blue extends ColorToPaint {
     paintIt = () => {
         return `Gonna paint it blue.`;
@@ -45,6 +53,8 @@ class Purple extends ColorToPaint {
     }
 }
 
+
+// Log it out
 consoleLogIt = (block) => {
     console.log(block.paintBlock());
 }
