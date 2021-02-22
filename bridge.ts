@@ -23,7 +23,8 @@
     //  Bus     Bike            Produce    Assemble       
 
 
-
+// Abstraction
+// Define method to eat dessert
 class Dessert {
     protected eatIt: EatIt;
 
@@ -31,45 +32,57 @@ class Dessert {
         this.eatIt = eatIt;
     }
 
-    public production(): string {
+    public letsEat(): string {
         const result = this.eatIt.chowDown();
-        return `Dessert: Base operation with:\n${result}`;
+        return `Dessert (base class):\nI ${result}`;
     }
 }
 
+// Extension of Dessert
 class IceCream extends Dessert {
-    public production(): string {
+    public letsEat(): string {
         const result = this.eatIt.chowDown();
-        return `IceCream: Extended dessert operation with:\n${result}`;
+        return `IceCream (extended Dessert class):\nI ${result}`;
     }
 }
 
+// Interface/ Implementation
 interface EatIt {
     chowDown(): string;
 }
 
+// Extension of EatIt
 class GobbledDessert implements EatIt {
     public chowDown(): string {
-        return 'Gobbled dessert.';
+        return 'gobbled dessert.';
     }
 }
 
+// Extension of EatIt
 class EnjoyedIceCream implements EatIt {
     public chowDown(): string {
-        return 'Enjoyed the ice cream.';
+        return 'enjoyed the ice cream.';
     }
 }
 
-function clientCode(dessert: Dessert) {
-    console.log(dessert.production());
+
+// Log it out
+function clientCodeBridge(dessert: Dessert) {
+    console.log(dessert.letsEat());
 }
 
 let implementation = new GobbledDessert();
 let abstraction = new Dessert(implementation);
-clientCode(abstraction);
+clientCodeBridge(abstraction);
+
+console.log('');
+
+implementation = new EnjoyedIceCream();
+abstraction = new Dessert(implementation);
+clientCodeBridge(abstraction);
 
 console.log('');
 
 implementation = new EnjoyedIceCream();
 abstraction = new IceCream(implementation);
-clientCode(abstraction);
+clientCodeBridge(abstraction);

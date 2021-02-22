@@ -34,7 +34,7 @@ class ColorToPaint {
     paintIt = () => {}
 }
 
-// Extend base class 'ColorToPaint' by implementing the paintIt() method in various colors
+// Extend class 'ColorToPaint' by implementing the paintIt() method in various colors
 class Blue extends ColorToPaint {
     paintIt = () => {
         return `Gonna paint it blue.`;
