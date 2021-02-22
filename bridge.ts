@@ -26,49 +26,49 @@
 // Abstraction
 // Define method to eat dessert
 class Dessert {
-    protected eatIt: EatIt;
+  protected eatIt: EatIt;
 
-    constructor(eatIt: EatIt) {
-        this.eatIt = eatIt;
-    }
+  constructor(eatIt: EatIt) {
+    this.eatIt = eatIt;
+  }
 
-    public letsEat(): string {
-        const result = this.eatIt.chowDown();
-        return `Dessert (base class):\nI ${result}`;
-    }
+  public letsEat(): string {
+    const result = this.eatIt.chowDown();
+    return `Dessert (base class):\nI ${result}`;
+  }
 }
 
 // Extension of Dessert
 class IceCream extends Dessert {
-    public letsEat(): string {
-        const result = this.eatIt.chowDown();
-        return `IceCream (extended Dessert class):\nI ${result}`;
-    }
+  public letsEat(): string {
+    const result = this.eatIt.chowDown();
+    return `IceCream (extended Dessert class):\nI ${result}`;
+  }
 }
 
 // Interface/ Implementation
 interface EatIt {
-    chowDown(): string;
+  chowDown(): string;
 }
 
 // Extension of EatIt
 class GobbledDessert implements EatIt {
-    public chowDown(): string {
-        return 'gobbled dessert.';
-    }
+  public chowDown(): string {
+    return 'gobbled dessert.';
+  }
 }
 
 // Extension of EatIt
 class EnjoyedIceCream implements EatIt {
-    public chowDown(): string {
-        return 'enjoyed the ice cream.';
-    }
+  public chowDown(): string {
+    return 'enjoyed the ice cream.';
+  }
 }
 
 
-// Log it out
+// Run that code
 function clientCodeBridge(dessert: Dessert) {
-    console.log(dessert.letsEat());
+  console.log(dessert.letsEat());
 }
 
 let implementation = new GobbledDessert();

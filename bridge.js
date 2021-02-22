@@ -3,60 +3,60 @@
 // Abstraction - define 'Block' base class to be extended to various types of Blocks
 // Define method that paints a block
 class Block {
-    constructor(colorToPaint) {
-        this.colorToPaint = colorToPaint;
-    }
+  constructor(colorToPaint) {
+    this.colorToPaint = colorToPaint;
+  }
 
-    paintBlock = () => {
-        let paintPlan = this.colorToPaint.paintIt();
-        return `Block base class paint plan is:\n${paintPlan}`;
-    }
+  paintBlock = () => {
+    let paintPlan = this.colorToPaint.paintIt();
+    return `Block base class paint plan is:\n${paintPlan}`;
+  }
 }
 
 // Extend base class 'Block' as different block shapes
 class SquareBlock extends Block {
-    paintBlock = () => {
-        let paintPlan = this.colorToPaint.paintIt();
-        return `Square block class paint plan is:\n${paintPlan}`;
-    }
+  paintBlock = () => {
+    let paintPlan = this.colorToPaint.paintIt();
+    return `Square block class paint plan is:\n${paintPlan}`;
+  }
 }
 
 class OctagonalBlock extends Block {
-    paintBlock = () => {
-        let paintPlan = this.colorToPaint.paintIt();
-        return `Octagonal block class paint plan is:\n${paintPlan}`;
-    }
+  paintBlock = () => {
+    let paintPlan = this.colorToPaint.paintIt();
+    return `Octagonal block class paint plan is:\n${paintPlan}`;
+  }
 }
 
 // Implementation - defines/pre-implements but doesn't implement a paintIt() function
 // Like an interface in the above way
 class ColorToPaint {
-    paintIt = () => {}
+  paintIt = () => {}
 }
 
 // Extend class 'ColorToPaint' by implementing the paintIt() method in various colors
 class Blue extends ColorToPaint {
-    paintIt = () => {
-        return `Gonna paint it blue.`;
-    }
+  paintIt = () => {
+    return `Gonna paint it blue.`;
+  }
 }
 
 class Orange extends ColorToPaint {
-    paintIt = () => {
-        return `Gonna paint it orange.`;
-    }
+  paintIt = () => {
+    return `Gonna paint it orange.`;
+  }
 }
 
 class Purple extends ColorToPaint {
-    paintIt = () => {
-        return `Gonna paint it purple.`;
-    }
+  paintIt = () => {
+    return `Gonna paint it purple.`;
+  }
 }
 
 
-// Log it out
+// Run that code
 consoleLogIt = (block) => {
-    console.log(block.paintBlock());
+  console.log(block.paintBlock());
 }
 
 let blue = new Blue();
