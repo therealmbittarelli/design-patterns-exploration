@@ -43,74 +43,6 @@ class ConcreteGardenBuilder implements GardenBuilder {
   }
 }
 
-class VegetableGarden implements GardenBuilder {
-  private garden: Garden;
-
-  constructor() {
-    this.reset();
-  }
-
-  public reset(): void {
-    this.garden = new Garden();
-  }
-
-  public buildFence(): void {
-    this.garden.steps.push('\nConstructing a fence made of plastic netting.\n');
-  }
-  public layCarbonBase(): void {
-    this.garden.steps.push('Putting down 12 inches of dead lawn clippings across the garden bed.\n');
-  }
-  public layRowsOfCompost(): void {
-    this.garden.steps.push('Creating rows of compost, about 8 inches deep.\n');
-  }
-  public plantSeedlings(): void {
-    this.garden.steps.push('Planting tomatoes, popcorn, pumpkins, blueberries, and cucumbers.\n');
-  }
-  public waterPlants(): void {
-    this.garden.steps.push('Running a pvc irrigation system through the garden.\n');
-  }
-
-  public getGarden(): Garden {
-    let result = this.garden;
-    this.reset();
-    return result;
-  }
-}
-
-class ShadeGarden implements GardenBuilder {
-  private garden: Garden;
-
-  constructor() {
-    this.reset();
-  }
-
-  public reset(): void {
-    this.garden = new Garden();
-  }
-
-  public buildFence(): void {
-    this.garden.steps.push('\nConstructing a fence made of wood and wire mesh.\n');
-  }
-  public layCarbonBase(): void {
-    this.garden.steps.push('Putting down 12 inches of dried leaves across the garden bed.\n');
-  }
-  public layRowsOfCompost(): void {
-    this.garden.steps.push('Creating rows of compost, about 6 inches deep.\n');
-  }
-  public plantSeedlings(): void {
-    this.garden.steps.push('Planting zinnias, lilies, columbine, silver loaf, and daisies.\n');
-  }
-  public waterPlants(): void {
-    this.garden.steps.push('Watering plants.\n');
-  }
-
-  public getGarden(): Garden {
-    let result = this.garden;
-    this.reset();
-    return result;
-  }
-}
-
 class Garden {
   public steps: string[] = [];
 
@@ -146,6 +78,18 @@ function clientCodeBuilder(director: Director) {
 
   console.log('--- Fenceless garden ---');
   director.fencelessGarden();
+  builder.getGarden().showStepsTaken();
+
+  console.log('--- Dig garden ---');
+  director.digGarden();
+  builder.getGarden().showStepsTaken();
+
+  console.log('--- The works ---');
+  builder.buildFence();
+  builder.layCarbonBase();
+  builder.layRowsOfCompost();
+  builder.plantSeedlings();
+  builder.waterPlants();
   builder.getGarden().showStepsTaken();
 }
 

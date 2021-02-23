@@ -45,6 +45,8 @@ class Otter {
   }
 }
 
+
+// Run the code
 function clientCodeFacade(facade: MyFacade) {
   console.log(facade.tellMeAboutAnimals());
 }
