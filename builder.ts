@@ -1,5 +1,6 @@
 // Allows a developer to produce different types/representations of an object using the same construction code
 
+// Interface - pre-implementation of methods
 interface GardenBuilder {
   buildFence(): void;
   layCarbonBase(): void;
@@ -9,6 +10,7 @@ interface GardenBuilder {
   
 }
 
+// Extends GardenBuilder - implements methods from the interface
 class ConcreteGardenBuilder implements GardenBuilder {
   private garden: Garden;
 
@@ -43,6 +45,7 @@ class ConcreteGardenBuilder implements GardenBuilder {
   }
 }
 
+// Takes care of printing the relevant garden creation steps
 class Garden {
   public steps: string[] = [];
 
@@ -51,6 +54,7 @@ class Garden {
   }
 }
 
+// Designates different types of gardens by setting up methods that only incorporate some methods out of the interface
 class Director {
   private gardenBuilder: GardenBuilder;
 
@@ -72,6 +76,7 @@ class Director {
   }
 }
 
+// Run the code
 function clientCodeBuilder(director: Director) {
   let builder = new ConcreteGardenBuilder();
   director.setBuilder(builder);
