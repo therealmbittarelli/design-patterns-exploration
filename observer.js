@@ -23,7 +23,7 @@ class ConcreteSubject extends SubjectInterface {
         if (doesExist) {
             return console.log('Observer already attached.');
         }
-        console.log('Attached an observer.');
+        console.log('Attached an observer; will notify it with changes to state');
         this.observers.push(observer);
     }
 
@@ -61,7 +61,7 @@ class ObserverInterface {
 class ConcreteObserverA extends ObserverInterface {
     update(subject) {
         if (subject instanceof ConcreteSubject && subject.state < 3) {
-            console.log('User A reacted to the state change.');
+            console.log('User A reacted to the change in state.');
         }
     }
 }
@@ -69,7 +69,7 @@ class ConcreteObserverA extends ObserverInterface {
 class ConcreteObserverB extends ObserverInterface {
     update(subject) {
         if (subject instanceof ConcreteSubject) {
-            console.log("User B reacted to the state change.");
+            console.log("User B reacted to the change in state.");
         }
     }
 }
