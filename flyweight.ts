@@ -60,7 +60,7 @@ class BookType {
     public operation(uniqueState): void {
         const s = JSON.stringify(this.sharedState);
         const u = JSON.stringify(uniqueState);
-        console.log(`Book: Displaying shared (${s}) and unique (${u}) state.`);
+        // console.log(`Book: Displaying shared (${s}) and unique (${u}) state.`);
     }
 }
 
@@ -93,16 +93,16 @@ class BookFactory {
         const key = this.getKey(sharedState);
 
         if (!(key in this.books)) {
-            console.log('BookFactory: Can\'t find a book, creating new one.');
+            // console.log('BookFactory: Creating new book record.');
             this.books[key] = new BookType(sharedState);
         } else {
-            console.log('BookFactory: Reusing existing book.');
+            // console.log('BookFactory: Record of this book already exists.');
         }
 
         return this.books[key];
     }
 
-    public listBooks(): void {
+    public listBookTypes(): void {
         const count = Object.keys(this.books).length;
         console.log(`\nBooksFactory: I have ${count} booktypes:`);
         for (const key in this.books) {
@@ -141,4 +141,4 @@ addBookToLibrary(factory, 'Steel Tides', 'James Doe', '275', 'Action', 'yellow')
 
 addBookToLibrary(factory, 'New Book', 'Pizza Man', '25', 'Romance', 'purple');
 
-factory.listBooks();
+// factory.listBookTypes();
