@@ -6,6 +6,7 @@
 - Builder
 - Facade
 - Flyweight
+- Iterator
 - Observer
 - Prototype
 - Singleton
