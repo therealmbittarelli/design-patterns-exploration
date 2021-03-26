@@ -1,4 +1,4 @@
-// Observer pattern enables objects 'subscribe' to be notified about state change events
+// Observer pattern enables objects to 'subscribe' to be notified about state change events
 // (and unsubscribe)
 
 interface Subject {

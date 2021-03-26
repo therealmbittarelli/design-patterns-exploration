@@ -26,7 +26,7 @@ class MyFacade {
 // Subclass
 class Duck {
   public wakeUp(): string {
-    return 'Ducks like to eat slimey weeds for breakfast and go for a paddle.'
+    return 'Ducks like to eat slimy weeds for breakfast and go for a paddle.'
   }
 
   public afternoonActivities(): string {
