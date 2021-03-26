@@ -35,21 +35,6 @@
 // ... this way, Oak trees are defined once, and referenced as many times as needed by much smaller (memory-wise) objects
 
 // Flyweight
-// class Book {
-//     private title: any;
-//     private pages: any;
-//     private author: any;
-
-//     constructor(title: any, pages: any, author:any) {
-//         this.title: title;
-//         this.pages: pages;
-//         this.author: author;
-//     }
-
-//     public operation()
-
-// }
-
 class BookType {
     private sharedState: any;
 
@@ -112,15 +97,14 @@ class BookFactory {
 }
 
 /**
- * The client code usually creates a bunch of pre-populated flyweights in the
- * initialization stage of the application.
+ * The client code usually creates a bunch of pre-populated flyweights in the initialization stage of the application
  */
-const factory = new BookFactory([
-    ['300', 'Adventure', 'blue'],
-    ['250', 'Biography', 'red'],
-    ['15', 'Historical', 'green'],
-    ['25', 'Fantasy', 'brown'],
-    ['275', 'Action', 'yellow'],
+const factoryTS = new BookFactory([
+    ['300', 'Adventure', 'hardcover'],
+    ['250', 'Biography', 'magazine'],
+    ['15', 'Historical', 'paperback'],
+    ['25', 'Fantasy', 'hardcover'],
+    ['275', 'Action', 'paperback'],
 ]);
 
 function addBookToLibrary(
@@ -135,10 +119,10 @@ function addBookToLibrary(
     book.operation([title, author]);
 }
 
-addBookToLibrary(factory, 'The Golden Compass', 'Philip Pullman', '300', 'Adventure', 'blue');
+addBookToLibrary(factoryTS, 'The Golden Compass', 'Philip Pullman', '300', 'Adventure', 'hardcover');
 
-addBookToLibrary(factory, 'Steel Tides', 'James Doe', '275', 'Action', 'yellow');
+addBookToLibrary(factoryTS, 'Steel Tides', 'James Doe', '275', 'Action', 'paperback');
 
-addBookToLibrary(factory, 'New Book', 'Pizza Man', '25', 'Romance', 'purple');
+addBookToLibrary(factoryTS, 'New Book', 'Pizza Man', '25', 'Romance', 'magazine');
 
-// factory.listBookTypes();
+// factoryTS.listBookTypes();
