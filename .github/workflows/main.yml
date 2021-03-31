@@ -30,3 +30,9 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+
+  update-readme:
+    name: Update Quote README
+    runs-on: ubuntu-latest
+    steps:
+      - uses: siddharth2016/quote-readme@main

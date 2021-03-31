@@ -5,8 +5,12 @@
 - Bridge
 - Builder
 - Facade
+- Factory
 - Flyweight
 - Iterator
 - Observer
 - Prototype
 - Singleton
+
+<!--STARTS_HERE_QUOTE_README-->
+<!--ENDS_HERE_QUOTE_README-->
