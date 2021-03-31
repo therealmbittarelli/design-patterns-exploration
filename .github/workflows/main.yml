@@ -1,16 +1,16 @@
-# This is a basic workflow to help you get started with Actions
+# This is a test workflow
 
-name: CI
+name: Test McWorkflow
 
 # Triggers the workflow on push
 on: 
-  # Allows you to run this workflow manually from the Actions tab
+  # Allows workflow to be run manually from the Actions tab
   workflow_dispatch:
   push:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
+  # This workflow contains a single job called "My first job"
   my_first_job:
     name: My first job
     # The type of runner that the job will run on
@@ -28,8 +28,8 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          echo Doop dee doop
+          echo Doop a dee doop
 
   update-readme:
     name: Update Quote README
