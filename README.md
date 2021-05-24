@@ -4,6 +4,7 @@
 - Adapter
 - Bridge
 - Builder
+- Decorator
 - Facade
 - Factory
 - Flyweight
