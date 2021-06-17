@@ -1,6 +1,6 @@
 # design-patterns-exploration
 
-## Running list of patterns with examples in this repo
+## Patterns with examples in this repo
 - Adapter
 - Bridge
 - Builder
@@ -12,6 +12,16 @@
 - Observer
 - Prototype
 - Singleton
+
+## Running examples
+- Change directory into the directory holding the example file that you're interested in running. 
+- If the file is **JavaScript**, as long as you have [Node.js](https://nodejs.org/en/) installed, you can run the following command from your command line:  
+`node [filename]`  
+... replacing `[filename]` with the name of the file you wish to execute (for instance, `singleton.js`)
+- If the file is **TypeScript**, install [ts-node](https://www.npmjs.com/package/ts-node) and run the following command from your command line:  
+`ts-node [filename]`  
+... replacing `[filename]` with the name of the file you wish to execute (for instance, `singleton.ts`)
+
 
 ### GitHub Actions experiment
 Randomly generated quote, newly rendered each time a new commit is pushed
